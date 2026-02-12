@@ -1,0 +1,182 @@
+/* ===============================
+   RESET BÁSICO
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   ESTILO GLOBAL
+   =============================== */
+body {
+  font-family: "PT Mono", sans-serif;
+  font-size: 12px;
+  line-height: 1.6em;
+  background-color: #fff;
+  color: #000;
+}
+
+/* ===============================
+   APP
+   =============================== */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+.header {
+  padding: 50px;
+  position: relative;
+}
+.social_media {
+  position: absolute;
+  top: 50px;      /* alinha com o título */
+  right: 50px;
+
+  display: flex;
+  gap: 12px;      /* espaço entre ícones */
+}
+
+.social_media img {
+  width: 50px;    /* ícones pequenos e elegantes */
+  height: 25px;
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #000;
+  margin-left: 14px;
+}
+
+/* ===============================
+   MAIN
+   =============================== */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ===============================
+   CONTENT GRID
+   =============================== */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+.text-area {
+  grid-area: text;
+}
+
+.video-area {
+  grid-area: video;
+}
+
+.text-area {
+  grid-column: 2;
+}
+
+.video-area {
+  grid-column: 1;
+}
+
+
+/* ===============================
+   TEXT AREA
+   =============================== */
+.text-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-area h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.text-area p {
+  color: #000;
+}
+
+/* ===============================
+   VIDEO
+   =============================== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+@media (max-width: 768px) {
+
+  .content {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  }
+  .video-area {
+    order: 1;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+  }
+  .video-area iframe {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+
+  }
+  .text-area{
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+  .social_media {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+  
+  
+
+}
